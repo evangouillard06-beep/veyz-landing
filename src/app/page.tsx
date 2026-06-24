@@ -5,7 +5,7 @@ import Problem from "@/components/Problem";
 import Stats from "@/components/Stats";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
-import LiveDashboard from "@/components/LiveDashboard";
+import DemoSection from "@/components/DemoSection";
 import Faq from "@/components/Faq";
 import FinalCta from "@/components/FinalCta";
 import Footer from "@/components/Footer";
@@ -20,7 +20,7 @@ export default function Home() {
         <Stats />
         <Features />
         <HowItWorks />
-        <LiveDashboard />
+        <DemoSection />
         <Faq />
         <FinalCta />
       </main>
