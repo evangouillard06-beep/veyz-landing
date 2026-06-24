@@ -5,7 +5,7 @@ import { ShieldCheck, Gift } from "@phosphor-icons/react";
 import { siteConfig } from "@/lib/config";
 import AuroraBackground from "./AuroraBackground";
 import ProductPreview from "./ProductPreview";
-import PhoneCTA from "./PhoneCTA";
+import CtaButton from "./CtaButton";
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -60,7 +60,7 @@ export default function Hero() {
             variants={item}
             className="mt-9 flex flex-wrap items-center gap-4"
           >
-            <PhoneCTA size="lg" />
+            <CtaButton size="lg" />
             <span className="inline-flex items-center gap-2 text-sm text-zinc-500">
               <ShieldCheck weight="fill" className="h-4 w-4 text-accent-soft" />
               Le premier qui répond décroche le mandat.

@@ -5,7 +5,7 @@ import { List, X } from "@phosphor-icons/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { siteConfig } from "@/lib/config";
 import Logo from "./Logo";
-import PhoneCTA from "./PhoneCTA";
+import CtaButton from "./CtaButton";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,7 +45,7 @@ export default function Header() {
 
         <div className="flex items-center gap-2">
           <div className="hidden sm:block">
-            <PhoneCTA size="sm" />
+            <CtaButton size="sm" />
           </div>
           <button
             type="button"
@@ -80,7 +80,7 @@ export default function Header() {
                 </a>
               ))}
               <div className="pt-4">
-                <PhoneCTA size="md" className="w-full" />
+                <CtaButton size="md" className="w-full" />
               </div>
             </nav>
           </motion.div>

@@ -36,10 +36,10 @@ export default function Footer() {
               Contact
             </span>
             <a
-              href={siteConfig.phone.href}
-              className="font-mono text-zinc-300 transition-colors hover:text-accent-soft"
+              href={siteConfig.ctaHref}
+              className="text-zinc-300 transition-colors hover:text-accent-soft"
             >
-              {siteConfig.phone.display}
+              Être rappelé
             </a>
           </div>
         </div>

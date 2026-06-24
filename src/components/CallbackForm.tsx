@@ -109,8 +109,7 @@ export default function CallbackForm() {
           Merci, on vous rappelle très vite.
         </p>
         <p className="mt-2 max-w-[34ch] text-sm text-zinc-400">
-          Votre demande est bien arrivée. En attendant, vous pouvez aussi nous
-          appeler directement.
+          Votre demande est bien arrivée. On revient vers vous très rapidement.
         </p>
       </div>
     );
@@ -195,8 +194,8 @@ export default function CallbackForm() {
         >
           <Warning weight="fill" className="h-4 w-4 shrink-0" />
           {endpointReady
-            ? "L'envoi a échoué. Réessayez, ou appelez-nous directement."
-            : `Le formulaire n'est pas encore activé. Appelez-nous au ${siteConfig.phone.display}.`}
+            ? "L'envoi a échoué. Merci de réessayer dans un instant."
+            : "Le formulaire n'est pas encore activé. Merci de réessayer bientôt."}
         </p>
       )}
 

@@ -35,12 +35,12 @@ npm run lint    # ESLint
 
 Tout est centralisé dans **`src/lib/config.ts`**.
 
-### 1. Numéro de téléphone
+### 1. Contact = formulaire uniquement
 
-Déjà renseigné dans `siteConfig.phone` (`07 61 44 38 13` / `tel:+33761443813`).
-Le numéro apparaît dans le header, le hero, le bandeau CTA final et le footer.
-Pour le changer, modifiez `display` (affichage) et `href` (lien d'appel, format
-international conseillé).
+Le seul moyen de contact est le **formulaire « Être rappelé »** (section
+`#contact`). Tous les CTA (header, hero, bandeau final, footer) défilent vers ce
+formulaire via `siteConfig.ctaHref` / `siteConfig.ctaLabel`. Il n'y a plus de
+numéro de téléphone ni de lien `tel:`.
 
 ### 2. Formulaire « Être rappelé » (Formspree)
 
@@ -59,23 +59,23 @@ l'endpoint collé, les demandes arrivent directement dans votre boîte mail.
 Le formulaire inclut un champ honeypot anti-spam (`_gotcha`, géré nativement par
 Formspree), la validation des champs, et les états chargement / succès / erreur.
 
-### 3. Vidéo de démonstration
+### 3. Section démo : dashboard vivant
 
-Hébergez la vidéo sur **YouTube ou Vimeo en non répertorié**, récupérez l'URL
-d'**intégration** (embed), puis remplacez `[URL_VIDEO_DEMO]` :
+La section démo (`#demo`) n'utilise plus de vidéo. C'est un composant React
+(`LiveDashboard.tsx`) qui simule le tableau de bord Veyz en fonctionnement :
+KPIs animés, arrivée de leads fictifs en boucle, mini-répartition, alerte « Lead
+chaud » et encart « Brouillon préparé ». Aucune configuration requise.
 
-```ts
-demoVideoUrl: "https://www.youtube.com/embed/XXXXXXXXXXX",
-```
-
-Tant que le placeholder n'est pas remplacé, la section démo affiche une vignette
-« Démo bientôt disponible » au lieu d'une iframe vide. Ne déposez pas de gros
-fichier vidéo dans `/public`.
+Détails techniques : les timers ne tournent que lorsque la section est visible
+(`useInView`) et sont nettoyés à la sortie du viewport et au démontage. En
+`prefers-reduced-motion`, un dashboard statique pré-rempli s'affiche sans timer.
+Toutes les animations sont en `transform` / `opacity` (60 fps, pas de CLS). Les
+données sont fictives et illustratives.
 
 ### Ajouter d'autres CTA plus tard (email, prise de RDV)
 
 Le bloc `siteConfig.contact` (`email`, `bookingUrl`) est déjà prévu. Renseignez-le
-puis réutilisez le composant `PhoneCTA` comme modèle pour brancher un nouveau bouton.
+puis réutilisez le composant `CtaButton` comme modèle pour brancher un nouveau bouton.
 
 ## Déployer sur Vercel
 

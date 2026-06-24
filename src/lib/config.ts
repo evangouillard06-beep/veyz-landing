@@ -1,8 +1,8 @@
 // Configuration centrale du site Veyz.
-// Les deux placeholders à remplacer avant mise en ligne :
-//   - phone.display / phone.href : le numéro de téléphone (seul CTA actuel)
-//   - demoVideoUrl : l'URL d'intégration de la vidéo de démonstration
+// Placeholder à remplacer avant mise en ligne :
+//   - formspreeEndpoint : l'endpoint Formspree qui reçoit le formulaire de contact
 //
+// Le seul moyen de contact est le formulaire "Être rappelé" (section #contact).
 // Pour ajouter plus tard un email ou un lien de prise de RDV, complétez
 // le bloc `contact` ci-dessous : les composants liront ces valeurs.
 
@@ -13,20 +13,15 @@ export const siteConfig = {
   description:
     "Veyz lit, trie et prépare des réponses personnalisées à vos leads immobiliers. Vous validez, vous envoyez. Répondez avant vos concurrents et ne perdez plus jamais un mandat.",
 
-  // Numéro de téléphone (CTA principal)
-  phone: {
-    display: "07 61 44 38 13",
-    href: "tel:+33761443813",
-  },
+  // Cible de tous les CTA : la section formulaire "Être rappelé".
+  ctaHref: "#contact",
+  ctaLabel: "Être rappelé",
 
   // Offre d'essai (inversion du risque)
   trial: {
     short: "2 semaines d'essai gratuit, sans engagement.",
     long: "Testez Veyz 2 semaines gratuitement, sans engagement. On s'occupe de l'installation.",
   },
-
-  // PLACEHOLDER - URL d'intégration de la vidéo (YouTube/Vimeo non répertorié)
-  demoVideoUrl: "[URL_VIDEO_DEMO]",
 
   // PLACEHOLDER - Endpoint Formspree du formulaire "Être rappelé"
   // (créer un form gratuit sur formspree.io, coller l'URL ici, ex. https://formspree.io/f/xxxx)
