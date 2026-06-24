@@ -31,24 +31,35 @@ npm run start   # sert le build de production
 npm run lint    # ESLint
 ```
 
-## Les 2 valeurs à renseigner
+## Configuration
 
 Tout est centralisé dans **`src/lib/config.ts`**.
 
-### 1. Numéro de téléphone (seul CTA actuel)
+### 1. Numéro de téléphone
 
-Remplacez le placeholder `[NUMERO_DE_TELEPHONE]` dans `siteConfig.phone` :
-
-```ts
-phone: {
-  display: "04 XX XX XX XX",        // ce qui s'affiche
-  href: "tel:+334XXXXXXXX",         // le lien d'appel (format international conseillé)
-},
-```
-
+Déjà renseigné dans `siteConfig.phone` (`07 61 44 38 13` / `tel:+33761443813`).
 Le numéro apparaît dans le header, le hero, le bandeau CTA final et le footer.
+Pour le changer, modifiez `display` (affichage) et `href` (lien d'appel, format
+international conseillé).
 
-### 2. Vidéo de démonstration
+### 2. Formulaire « Être rappelé » (Formspree)
+
+Le formulaire de rappel envoie les coordonnées via [Formspree](https://formspree.io)
+(aucun serveur à coder). Pour l'activer :
+
+1. Créez un compte gratuit sur **formspree.io**.
+2. Créez un nouveau formulaire (form) relié à votre adresse email de réception.
+3. Copiez l'**endpoint** fourni (de la forme `https://formspree.io/f/xxxx`).
+4. Collez-le à la place de `[FORMSPREE_ENDPOINT]` dans `siteConfig.formspreeEndpoint`.
+
+Tant que l'endpoint n'est pas renseigné, le formulaire reste visible et validé
+côté client, mais l'envoi affiche un message invitant à appeler. Une fois
+l'endpoint collé, les demandes arrivent directement dans votre boîte mail.
+
+Le formulaire inclut un champ honeypot anti-spam (`_gotcha`, géré nativement par
+Formspree), la validation des champs, et les états chargement / succès / erreur.
+
+### 3. Vidéo de démonstration
 
 Hébergez la vidéo sur **YouTube ou Vimeo en non répertorié**, récupérez l'URL
 d'**intégration** (embed), puis remplacez `[URL_VIDEO_DEMO]` :

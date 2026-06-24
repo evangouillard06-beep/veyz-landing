@@ -13,14 +13,24 @@ export const siteConfig = {
   description:
     "Veyz lit, trie et prépare des réponses personnalisées à vos leads immobiliers. Vous validez, vous envoyez. Répondez avant vos concurrents et ne perdez plus jamais un mandat.",
 
-  // PLACEHOLDER 1 - Numéro de téléphone (seul CTA pour l'instant)
+  // Numéro de téléphone (CTA principal)
   phone: {
-    display: "[NUMERO_DE_TELEPHONE]",
-    href: "tel:[NUMERO_DE_TELEPHONE]",
+    display: "07 61 44 38 13",
+    href: "tel:+33761443813",
   },
 
-  // PLACEHOLDER 2 - URL d'intégration de la vidéo (YouTube/Vimeo non répertorié)
+  // Offre d'essai (inversion du risque)
+  trial: {
+    short: "2 semaines d'essai gratuit, sans engagement.",
+    long: "Testez Veyz 2 semaines gratuitement, sans engagement. On s'occupe de l'installation.",
+  },
+
+  // PLACEHOLDER - URL d'intégration de la vidéo (YouTube/Vimeo non répertorié)
   demoVideoUrl: "[URL_VIDEO_DEMO]",
+
+  // PLACEHOLDER - Endpoint Formspree du formulaire "Être rappelé"
+  // (créer un form gratuit sur formspree.io, coller l'URL ici, ex. https://formspree.io/f/xxxx)
+  formspreeEndpoint: "[FORMSPREE_ENDPOINT]",
 
   // Canaux de contact additionnels (optionnels, vides pour l'instant).
   contact: {

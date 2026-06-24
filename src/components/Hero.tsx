@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { ShieldCheck } from "@phosphor-icons/react";
+import { ShieldCheck, Gift } from "@phosphor-icons/react";
+import { siteConfig } from "@/lib/config";
 import AuroraBackground from "./AuroraBackground";
 import ProductPreview from "./ProductPreview";
 import PhoneCTA from "./PhoneCTA";
@@ -63,6 +64,13 @@ export default function Hero() {
             <span className="inline-flex items-center gap-2 text-sm text-zinc-500">
               <ShieldCheck weight="fill" className="h-4 w-4 text-accent-soft" />
               Le premier qui répond décroche le mandat.
+            </span>
+          </motion.div>
+
+          <motion.div variants={item} className="mt-4">
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1.5 text-sm font-medium text-accent-soft">
+              <Gift weight="fill" className="h-4 w-4" />
+              {siteConfig.trial.short}
             </span>
           </motion.div>
         </motion.div>
