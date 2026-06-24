@@ -80,6 +80,8 @@ export default function CallbackForm() {
           Téléphone: fields.telephone,
           Email: fields.email || "(non renseigné)",
           Message: fields.message || "(aucun)",
+          // `email` en minuscule : Formspree l'utilise comme adresse de réponse.
+          ...(fields.email ? { email: fields.email } : {}),
           _subject: `Nouvelle demande de rappel - ${fields.agence}`,
         }),
       });

@@ -25,7 +25,7 @@ export const siteConfig = {
 
   // PLACEHOLDER - Endpoint Formspree du formulaire "Être rappelé"
   // (créer un form gratuit sur formspree.io, coller l'URL ici, ex. https://formspree.io/f/xxxx)
-  formspreeEndpoint: "[FORMSPREE_ENDPOINT]",
+  formspreeEndpoint: "https://formspree.io/f/mdaraykk",
 
   // Canaux de contact additionnels (optionnels, vides pour l'instant).
   contact: {
