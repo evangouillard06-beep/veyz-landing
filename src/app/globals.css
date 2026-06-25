@@ -21,6 +21,20 @@ body {
   color: #e7e9ea;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Masque la scrollbar tout en gardant le scroll (onglets mobiles, etc.) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Lenis smooth scroll */

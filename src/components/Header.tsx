@@ -52,7 +52,7 @@ export default function Header() {
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={open}
-            className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-white lg:hidden"
+            className="grid h-11 w-11 place-items-center rounded-full border border-white/10 text-white transition-transform active:scale-95 lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <List className="h-5 w-5" />}
           </button>

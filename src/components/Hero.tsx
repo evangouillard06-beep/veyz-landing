@@ -42,7 +42,7 @@ export default function Hero() {
 
           <motion.h1
             variants={item}
-            className="mt-6 text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl"
+            className="mt-6 text-balance text-[clamp(2.1rem,8vw,3.75rem)] font-semibold leading-[1.05] tracking-tight text-white"
           >
             Ne perdez plus jamais{" "}
             <span className="text-gradient">un lead immobilier.</span>
@@ -58,11 +58,11 @@ export default function Hero() {
 
           <motion.div
             variants={item}
-            className="mt-9 flex flex-wrap items-center gap-4"
+            className="mt-9 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center"
           >
-            <CtaButton size="lg" />
-            <span className="inline-flex items-center gap-2 text-sm text-zinc-500">
-              <ShieldCheck weight="fill" className="h-4 w-4 text-accent-soft" />
+            <CtaButton size="lg" className="w-full sm:w-auto" />
+            <span className="inline-flex items-center justify-center gap-2 text-sm text-zinc-500 sm:justify-start">
+              <ShieldCheck weight="fill" className="h-4 w-4 shrink-0 text-accent-soft" />
               Le premier qui répond décroche le mandat.
             </span>
           </motion.div>

@@ -347,7 +347,13 @@ export default function DemoDashboard() {
       if (e.key === "Escape") setSelected(null);
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    // Verrouille le défilement de la page pendant l'ouverture du panneau.
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
   }, [selected]);
 
   const tabs: { key: Tab; label: string; icon: typeof Tray }[] = [
@@ -379,8 +385,8 @@ export default function DemoDashboard() {
         </span>
       </div>
 
-      {/* Onglets */}
-      <div className="flex gap-1 border-b border-white/10 px-3 pt-3">
+      {/* Onglets (scroll horizontal sur mobile) */}
+      <div className="no-scrollbar flex gap-1 overflow-x-auto border-b border-white/10 px-3 pt-3">
         {tabs.map((t) => {
           const active = tab === t.key;
           return (
@@ -389,7 +395,7 @@ export default function DemoDashboard() {
               type="button"
               onClick={() => setTab(t.key)}
               aria-current={active}
-              className={`relative flex items-center gap-1.5 rounded-t-lg px-3 py-2 text-sm transition-colors ${
+              className={`relative flex shrink-0 items-center gap-1.5 rounded-t-lg px-3 py-2.5 text-sm transition-colors ${
                 active ? "text-white" : "text-zinc-500 hover:text-zinc-300"
               }`}
             >
@@ -499,7 +505,7 @@ export default function DemoDashboard() {
                       <button
                         type="button"
                         onClick={() => setSelected(l)}
-                        className="flex w-full items-center gap-3 rounded-lg border border-white/[0.06] bg-ink-950/40 p-2.5 text-left transition-colors hover:border-accent/30"
+                        className="flex w-full items-center gap-3 rounded-lg border border-white/[0.06] bg-ink-950/40 p-2.5 text-left transition-colors hover:border-accent/30 active:border-accent/40"
                       >
                         <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-ink-800 text-[11px] font-semibold text-accent-soft">
                           {l.expediteur.split(" ").map((n) => n[0]).join("")}
@@ -522,7 +528,7 @@ export default function DemoDashboard() {
           <div>
             {/* Barre de filtres */}
             <div className="mb-4 flex flex-wrap items-center gap-2">
-              <div className="relative flex-1 sm:min-w-[200px] sm:flex-initial">
+              <div className="relative w-full sm:w-auto sm:min-w-[200px] sm:flex-1">
                 <MagnifyingGlass className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
                 <input
                   type="text"
@@ -530,12 +536,12 @@ export default function DemoDashboard() {
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Rechercher un lead..."
                   aria-label="Rechercher un lead"
-                  className="w-full rounded-lg border border-white/10 bg-ink-950/80 py-2 pl-9 pr-3 text-sm text-white placeholder:text-zinc-600 outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/30"
+                  className="w-full rounded-lg border border-white/10 bg-ink-950/80 py-2.5 pl-9 pr-3 text-sm text-white placeholder:text-zinc-600 outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/30"
                 />
               </div>
-              <Select label="Statut" value={fStatut} onChange={(v) => setFStatut(v as StatutKey | "all")} options={[["all", "Tous statuts"], ...(Object.keys(STATUTS) as StatutKey[]).map((k) => [k, STATUTS[k].label] as [string, string])]} />
-              <Select label="Catégorie" value={fCategorie} onChange={(v) => setFCategorie(v as CategorieKey | "all")} options={[["all", "Toutes catégories"], ...(Object.keys(CATEGORIES) as CategorieKey[]).map((k) => [k, CATEGORIES[k]] as [string, string])]} />
-              <Select label="Score" value={fScore} onChange={(v) => setFScore(v as ScoreKey | "all")} options={[["all", "Tous scores"], ...(Object.keys(SCORES) as ScoreKey[]).map((k) => [k, SCORES[k].label] as [string, string])]} />
+              <Select className="flex-1 sm:flex-none" label="Statut" value={fStatut} onChange={(v) => setFStatut(v as StatutKey | "all")} options={[["all", "Tous statuts"], ...(Object.keys(STATUTS) as StatutKey[]).map((k) => [k, STATUTS[k].label] as [string, string])]} />
+              <Select className="flex-1 sm:flex-none" label="Catégorie" value={fCategorie} onChange={(v) => setFCategorie(v as CategorieKey | "all")} options={[["all", "Toutes catégories"], ...(Object.keys(CATEGORIES) as CategorieKey[]).map((k) => [k, CATEGORIES[k]] as [string, string])]} />
+              <Select className="flex-1 sm:flex-none" label="Score" value={fScore} onChange={(v) => setFScore(v as ScoreKey | "all")} options={[["all", "Tous scores"], ...(Object.keys(SCORES) as ScoreKey[]).map((k) => [k, SCORES[k].label] as [string, string])]} />
             </div>
 
             {/* Table */}
@@ -558,7 +564,7 @@ export default function DemoDashboard() {
                     <tr
                       key={l.id}
                       onClick={() => setSelected(l)}
-                      className={`cursor-pointer border-t border-white/[0.06] transition-colors hover:bg-white/[0.03] ${
+                      className={`cursor-pointer border-t border-white/[0.06] transition-colors hover:bg-white/[0.03] active:bg-white/[0.06] ${
                         highlightId === l.id ? "bg-accent/[0.08]" : ""
                       }`}
                     >
@@ -663,26 +669,30 @@ export default function DemoDashboard() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelected(null)}
-              className="absolute inset-0 z-40 bg-ink-950/70 backdrop-blur-sm"
+              className="fixed inset-0 z-[60] bg-ink-950/70 backdrop-blur-sm"
               aria-hidden
             />
             <motion.div
               role="dialog"
               aria-modal="true"
               aria-label={`Détail du lead ${selected.expediteur}`}
-              initial={reduce ? { opacity: 0 } : { x: "100%" }}
-              animate={reduce ? { opacity: 1 } : { x: 0 }}
-              exit={reduce ? { opacity: 0 } : { x: "100%" }}
+              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 48 }}
+              animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
+              exit={reduce ? { opacity: 0 } : { opacity: 0, y: 48 }}
               transition={{ type: "spring", stiffness: 320, damping: 34 }}
-              className="absolute inset-y-0 right-0 z-50 flex w-full max-w-md flex-col border-l border-white/10 bg-ink-900/95 backdrop-blur-xl"
+              className="fixed inset-x-0 bottom-0 z-[70] flex max-h-[88dvh] flex-col rounded-t-2xl border-t border-white/10 bg-ink-900/95 backdrop-blur-xl sm:inset-y-0 sm:left-auto sm:right-0 sm:max-h-none sm:w-full sm:max-w-md sm:rounded-t-none sm:border-l sm:border-t-0"
             >
+              {/* Poignée (bottom-sheet mobile) */}
+              <div className="flex justify-center pt-2.5 sm:hidden">
+                <span className="h-1 w-10 rounded-full bg-white/15" />
+              </div>
               <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
                 <span className="text-sm font-medium text-white">Détail du lead</span>
                 <button
                   type="button"
                   onClick={() => setSelected(null)}
                   aria-label="Fermer le détail"
-                  className="grid h-8 w-8 place-items-center rounded-full border border-white/10 text-zinc-400 transition-colors hover:text-white"
+                  className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-zinc-400 transition-colors hover:text-white active:scale-95"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -705,7 +715,7 @@ export default function DemoDashboard() {
                   <StatutBadge statut={selected.statut} />
                 </div>
 
-                <dl className="grid grid-cols-3 gap-3 text-sm">
+                <dl className="grid grid-cols-2 gap-3 text-sm sm:grid-cols-3">
                   <Info label="Reçu le" value={formatDate(selected.ts)} />
                   <Info label="Téléphone" value={selected.telephone} />
                   <Info label="Source" value={selected.source} />
@@ -791,18 +801,20 @@ function Select({
   value,
   onChange,
   options,
+  className = "",
 }: {
   label: string;
   value: string;
   onChange: (v: string) => void;
   options: [string, string][];
+  className?: string;
 }) {
   return (
     <select
       aria-label={label}
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="rounded-lg border border-white/10 bg-ink-950/80 px-3 py-2 text-sm text-zinc-300 outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/30"
+      className={`rounded-lg border border-white/10 bg-ink-950/80 px-3 py-2.5 text-sm text-zinc-300 outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/30 ${className}`}
     >
       {options.map(([v, l]) => (
         <option key={v} value={v} className="bg-ink-900 text-white">
@@ -815,7 +827,7 @@ function Select({
 
 function Info({ label, value, span }: { label: string; value: string; span?: boolean }) {
   return (
-    <div className={span ? "col-span-3" : ""}>
+    <div className={span ? "col-span-2 sm:col-span-3" : ""}>
       <dt className="text-[11px] text-zinc-500">{label}</dt>
       <dd className="mt-0.5 text-zinc-200">{value}</dd>
     </div>

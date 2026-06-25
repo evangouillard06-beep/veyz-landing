@@ -9,6 +9,7 @@ import DemoSection from "@/components/DemoSection";
 import Faq from "@/components/Faq";
 import FinalCta from "@/components/FinalCta";
 import Footer from "@/components/Footer";
+import MobileCta from "@/components/MobileCta";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <FinalCta />
       </main>
       <Footer />
+      <MobileCta />
     </SmoothScroll>
   );
 }
