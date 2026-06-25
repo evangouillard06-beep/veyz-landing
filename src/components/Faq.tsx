@@ -7,20 +7,20 @@ import Reveal from "./Reveal";
 
 const FAQ = [
   {
-    q: "L'IA envoie-t-elle des emails à ma place ?",
-    a: "Non. Veyz prépare un brouillon de réponse, mais rien n'est envoyé sans votre validation. Vous relisez, vous ajustez si besoin, puis vous décidez d'envoyer. Vous gardez le contrôle total.",
+    q: "L'IA va-t-elle écrire n'importe quoi à mes clients ?",
+    a: "Non. Veyz prépare un brouillon. Vous le relisez et l'envoyez vous-même. Rien ne part sans vous.",
   },
   {
-    q: "Et le RGPD ? Que deviennent mes données ?",
-    a: "Vos données sont traitées de manière sécurisée et conforme au RGPD. Elles servent uniquement à trier vos emails et préparer vos réponses. Vous restez propriétaire de vos données et gardez le contrôle dessus.",
+    q: "Mes données sont-elles en sécurité ?",
+    a: "Oui, traitées de façon sécurisée et conforme au RGPD. Vous gardez le contrôle.",
   },
   {
-    q: "C'est compliqué à installer ?",
-    a: "Non. La mise en route est rapide et nous nous occupons de la configuration pour vous. Vous n'avez pas de logiciel à gérer : Veyz se connecte à votre boîte mail et travaille en arrière-plan.",
+    q: "C'est compliqué à mettre en place ?",
+    a: "Non. On connecte votre boîte mail et on s'occupe de tout. Opérationnel en moins d'une heure.",
   },
   {
-    q: "Est-ce que ça remplace mon CRM ?",
-    a: "Non. Veyz ne remplace pas votre CRM : il traite vos emails en amont, là où le CRM s'arrête souvent. Les deux sont complémentaires.",
+    q: "Ça remplace mon logiciel / CRM ?",
+    a: "Non. Veyz travaille en amont, sur vos emails, et se complète avec vos outils.",
   },
 ];
 

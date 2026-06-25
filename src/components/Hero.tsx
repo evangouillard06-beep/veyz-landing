@@ -36,7 +36,7 @@ export default function Hero() {
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.div variants={item}>
             <span className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/5 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.16em] text-accent-soft">
-              Assistant email IA · Agences immobilières
+              L&apos;assistant qui ne laisse passer aucun mandat
             </span>
           </motion.div>
 
@@ -44,16 +44,17 @@ export default function Hero() {
             variants={item}
             className="mt-6 text-balance text-[clamp(2.1rem,8vw,3.75rem)] font-semibold leading-[1.05] tracking-tight text-white"
           >
-            Ne perdez plus jamais{" "}
-            <span className="text-gradient">un lead immobilier.</span>
+            Le premier qui répond décroche le mandat.{" "}
+            <span className="text-gradient">Soyez-le.</span>
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-[42ch] text-lg leading-relaxed text-zinc-400"
+            className="mt-6 max-w-[46ch] text-lg leading-relaxed text-zinc-400"
           >
-            Veyz lit vos emails, trie vos leads et prépare une réponse
-            personnalisée. Vous validez, vous envoyez.
+            Veyz lit vos emails — SeLoger, Leboncoin, contacts directs —, repère
+            les vendeurs et acheteurs sérieux et prépare votre réponse. Vous
+            relisez, vous envoyez. C&apos;est tout.
           </motion.p>
 
           <motion.div
@@ -63,7 +64,7 @@ export default function Hero() {
             <CtaButton size="lg" className="w-full sm:w-auto" />
             <span className="inline-flex items-center justify-center gap-2 text-sm text-zinc-500 sm:justify-start">
               <ShieldCheck weight="fill" className="h-4 w-4 shrink-0 text-accent-soft" />
-              Le premier qui répond décroche le mandat.
+              Rien n&apos;est envoyé sans votre validation.
             </span>
           </motion.div>
 

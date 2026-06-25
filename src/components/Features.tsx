@@ -27,12 +27,11 @@ export default function Features() {
               <div>
                 <Fire weight="fill" className="h-8 w-8 text-accent-soft" />
                 <h3 className="mt-5 text-xl font-medium text-white">
-                  Alerte leads chauds, en temps réel
+                  Repérez les vendeurs en priorité
                 </h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-zinc-400">
-                  Vendeur, demande d&apos;estimation, prospect prêt à signer.
-                  Veyz détecte les leads à forte valeur et vous notifie aussitôt
-                  pour rappeler en priorité.
+                  Alerte instantanée sur les demandes d&apos;estimation, vos
+                  mandats potentiels. Vous rappelez les bons contacts en premier.
                 </p>
               </div>
               <div className="mt-8 flex items-center gap-2 rounded-xl border border-accent/25 bg-ink-900/60 px-3 py-2.5">
@@ -52,12 +51,11 @@ export default function Features() {
             <article className="h-full rounded-2xl border border-white/10 bg-ink-900/50 p-7">
               <FunnelSimple weight="duotone" className="h-8 w-8 text-accent-soft" />
               <h3 className="mt-5 text-xl font-medium text-white">
-                Tri et classification automatiques
+                Répondez avant vos concurrents
               </h3>
               <p className="mt-3 max-w-[60ch] text-[15px] leading-relaxed text-zinc-400">
-                Veyz lit chaque email, écarte le spam et les sollicitations
-                commerciales, puis classe les vrais leads par type et par
-                priorité. Vous ouvrez une boîte déjà rangée.
+                Vos réponses sont prêtes en quelques secondes. Le premier qui
+                répond décroche le mandat : ce sera vous.
               </p>
             </article>
           </Reveal>
@@ -67,11 +65,10 @@ export default function Features() {
             <article className="h-full rounded-2xl border border-white/10 bg-ink-900/50 p-7">
               <PenNib weight="duotone" className="h-8 w-8 text-accent-soft" />
               <h3 className="mt-5 text-lg font-medium text-white">
-                Réponses personnalisées
+                Vous restez maître
               </h3>
               <p className="mt-2.5 text-[15px] leading-relaxed text-zinc-400">
-                Chaque brouillon reprend le ton de l&apos;agence et les infos du
-                bien concerné.
+                Vous validez chaque réponse. Rien ne part sans vous.
               </p>
             </article>
           </Reveal>
@@ -81,11 +78,11 @@ export default function Features() {
             <article className="h-full rounded-2xl border border-white/10 bg-ink-900/50 p-7">
               <ArrowsClockwise weight="duotone" className="h-8 w-8 text-accent-soft" />
               <h3 className="mt-5 text-lg font-medium text-white">
-                Relances qui ne s&apos;oublient pas
+                Ne relancez plus à la main
               </h3>
               <p className="mt-2.5 text-[15px] leading-relaxed text-zinc-400">
-                Veyz prépare la relance au bon moment pour les prospects restés
-                sans réponse.
+                Les prospects sans réponse sont relancés pour vous, au bon
+                moment.
               </p>
             </article>
           </Reveal>
@@ -96,11 +93,11 @@ export default function Features() {
               <div className="max-w-[52ch]">
                 <ChartLineUp weight="duotone" className="h-8 w-8 text-accent-soft" />
                 <h3 className="mt-5 text-xl font-medium text-white">
-                  Tout votre suivi, centralisé
+                  Gardez l&apos;œil sur tout
                 </h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-zinc-400">
-                  Leads reçus, réponses envoyées, relances en cours, leads
-                  chauds du jour. Un tableau de bord clair, sans ressaisie.
+                  Un tableau de bord clair de tous vos contacts : reçus,
+                  réponses, relances, mandats chauds du jour.
                 </p>
               </div>
               <div className="grid w-full grid-cols-3 gap-3 md:w-auto md:min-w-[300px]">

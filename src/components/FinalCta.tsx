@@ -25,11 +25,12 @@ export default function FinalCta() {
               {/* Colonne gauche : message + réassurance essai */}
               <div>
                 <h2 className="max-w-[20ch] text-balance text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
-                  Laissez vos coordonnées, on vous rappelle.
+                  Et si vous ne ratiez plus jamais un mandat ?
                 </h2>
-                <p className="mt-5 max-w-[46ch] text-lg text-zinc-300">
-                  Répondez à vos leads avant vos concurrents. On vous montre
-                  comment Veyz s&apos;adapte à votre agence, en quelques minutes.
+                <p className="mt-5 max-w-[48ch] text-lg text-zinc-300">
+                  Testez Veyz 2 semaines, gratuitement. On connecte votre boîte
+                  mail et on s&apos;occupe de tout — vous n&apos;avez rien à
+                  faire.
                 </p>
 
                 <p className="mt-8 flex items-start gap-2.5 rounded-2xl border border-accent/20 bg-accent/[0.06] px-4 py-3 text-[15px] text-accent-soft">

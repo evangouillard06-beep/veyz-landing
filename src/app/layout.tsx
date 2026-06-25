@@ -7,7 +7,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Veyz · Assistant email IA pour agences immobilières",
+    default: "Veyz — Répondez à vos leads immobiliers avant vos concurrents",
     template: "%s · Veyz",
   },
   description: siteConfig.description,
@@ -26,12 +26,12 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "Veyz, ne perdez plus jamais un lead immobilier",
+    title: "Veyz — Répondez à vos leads immobiliers avant vos concurrents",
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Veyz · Assistant email IA pour agences immobilières",
+    title: "Veyz — Répondez à vos leads immobiliers avant vos concurrents",
     description: siteConfig.description,
   },
   robots: { index: true, follow: true },

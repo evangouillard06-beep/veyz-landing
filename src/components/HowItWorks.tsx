@@ -8,18 +8,18 @@ import Reveal from "./Reveal";
 const STEPS = [
   {
     icon: EnvelopeSimple,
-    title: "Le mail arrive",
-    body: "Un nouveau lead entre dans votre boîte. Veyz le lit, le classe et repère son intention.",
+    title: "Le contact arrive.",
+    body: "Une demande tombe : estimation, visite, renseignement.",
   },
   {
     icon: Sparkle,
-    title: "Veyz prépare la réponse",
-    body: "Une réponse personnalisée est rédigée avec le ton de l'agence et les infos du bien, prête en brouillon.",
+    title: "Veyz prépare la réponse.",
+    body: "Personnalisée, avec les infos du bien, en quelques secondes.",
   },
   {
     icon: PaperPlaneTilt,
-    title: "Vous validez et envoyez",
-    body: "Vous relisez, ajustez si besoin, puis envoyez en un clic. Rien ne part sans votre accord.",
+    title: "Vous validez et envoyez.",
+    body: "En un clic. Rien ne part sans vous.",
   },
 ];
 

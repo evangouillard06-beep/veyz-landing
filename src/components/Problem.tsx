@@ -24,12 +24,14 @@ export default function Problem() {
     <section id="probleme" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-shell px-4 sm:px-6">
         <Reveal>
-          <h2 className="max-w-[18ch] text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Vos leads ne vous attendent pas.
+          <h2 className="max-w-[22ch] text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+            Vos meilleurs mandats partent pendant que vous travaillez.
           </h2>
-          <p className="mt-5 max-w-[58ch] text-lg text-zinc-400">
-            Chaque email entrant est un mandat potentiel. Et chaque heure sans
-            réponse, c&apos;est une longueur d&apos;avance offerte au concurrent.
+          <p className="mt-5 max-w-[62ch] text-lg text-zinc-400">
+            Un vendeur vous écrit le dimanche soir. Vous répondez le mardi.
+            Entre-temps, il a confié son bien au confrère. Entre les portails,
+            les relances oubliées et la paperasse, vos contacts les plus chauds
+            passent à la trappe — et vos commissions avec.
           </p>
         </Reveal>
 

@@ -11,7 +11,7 @@ export const siteConfig = {
   baseline: "L'assistant email IA des agences immobilières.",
   url: "https://veyz.fr",
   description:
-    "Veyz lit, trie et prépare des réponses personnalisées à vos leads immobiliers. Vous validez, vous envoyez. Répondez avant vos concurrents et ne perdez plus jamais un mandat.",
+    "Veyz prépare vos réponses aux demandes d'estimation, de visite et d'achat. Vous validez, vous envoyez. Ne perdez plus un mandat. Essai 2 semaines gratuit.",
 
   // Cible de tous les CTA : la section formulaire "Être rappelé".
   ctaHref: "#contact",

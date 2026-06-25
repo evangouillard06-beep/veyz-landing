@@ -52,7 +52,7 @@ export default function OgImage() {
               textTransform: "uppercase",
             }}
           >
-            Assistant email IA · Agences immobilières
+            Pour les agences immobilières
           </div>
           <div
             style={{
@@ -63,12 +63,12 @@ export default function OgImage() {
               maxWidth: 980,
             }}
           >
-            Ne perdez plus jamais un lead immobilier.
+            Le premier qui répond décroche le mandat.
           </div>
         </div>
 
         <div style={{ color: "#7c8a86", fontSize: 24 }}>
-          Veyz lit, trie et prépare vos réponses. Vous validez, vous envoyez.
+          Veyz prépare vos réponses. Vous validez, vous envoyez.
         </div>
       </div>
     ),
