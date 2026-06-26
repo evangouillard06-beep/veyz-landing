@@ -7,17 +7,9 @@ const nextConfig = {
       { protocol: "https", hostname: "fastly.picsum.photos" },
     ],
   },
-  // Redirection canonique www -> apex (une seule version indexée).
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.veyz.fr" }],
-        destination: "https://veyz.fr/:path*",
-        permanent: true,
-      },
-    ];
-  },
+  // NB : la redirection www -> apex est gérée par Vercel (domaine principal),
+  // PAS ici. Un redirect host dans next.config entre en conflit avec la
+  // redirection de domaine Vercel et crée une boucle infinie. Voir README.
 };
 
 export default nextConfig;
