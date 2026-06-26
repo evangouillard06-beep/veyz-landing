@@ -15,8 +15,8 @@ export default function Features() {
           <span className="text-xs font-medium uppercase tracking-[0.16em] text-accent-soft">
             Ce que fait Veyz
           </span>
-          <h2 className="mt-4 max-w-[22ch] text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Un assistant qui travaille votre boîte mail à votre place.
+          <h2 className="mt-4 max-w-[24ch] text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+            L&apos;assistant email qui répond à vos leads immobiliers.
           </h2>
         </Reveal>
 

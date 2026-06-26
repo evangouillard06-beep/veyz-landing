@@ -44,17 +44,17 @@ export default function Hero() {
             variants={item}
             className="mt-6 text-balance text-[clamp(2.1rem,8vw,3.75rem)] font-semibold leading-[1.05] tracking-tight text-white"
           >
-            Le premier qui répond décroche le mandat.{" "}
-            <span className="text-gradient">Soyez-le.</span>
+            Répondez à vos leads immobiliers{" "}
+            <span className="text-gradient">avant vos concurrents.</span>
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-[46ch] text-lg leading-relaxed text-zinc-400"
+            className="mt-6 max-w-[48ch] text-lg leading-relaxed text-zinc-400"
           >
-            Veyz lit vos emails — SeLoger, Leboncoin, contacts directs —, repère
-            les vendeurs et acheteurs sérieux et prépare votre réponse. Vous
-            relisez, vous envoyez. C&apos;est tout.
+            Le premier qui répond décroche le mandat. Veyz lit vos emails (SeLoger,
+            Leboncoin, contacts directs), repère les vendeurs et acheteurs sérieux
+            et prépare votre réponse. Vous validez, vous envoyez.
           </motion.p>
 
           <motion.div

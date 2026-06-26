@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "SeLoger Leboncoin leads",
   ],
   authors: [{ name: "Veyz" }],
-  alternates: { canonical: "/" },
+  alternates: { canonical: siteConfig.url },
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -44,23 +44,38 @@ export const viewport: Viewport = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Veyz",
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Web",
-  description: siteConfig.description,
-  url: siteConfig.url,
-  inLanguage: "fr-FR",
-  audience: {
-    "@type": "Audience",
-    audienceType: "Agences immobilières",
-    geographicArea: { "@type": "Country", name: "France" },
-  },
-  offers: {
-    "@type": "Offer",
-    category: "SaaS",
-    availability: "https://schema.org/InStock",
-  },
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
+      name: "Veyz",
+      url: siteConfig.url,
+      logo: `${siteConfig.url}/apple-icon`,
+      description: siteConfig.description,
+      areaServed: { "@type": "Country", name: "France" },
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${siteConfig.url}/#software`,
+      name: "Veyz",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      description: siteConfig.description,
+      url: siteConfig.url,
+      inLanguage: "fr-FR",
+      publisher: { "@id": `${siteConfig.url}/#organization` },
+      audience: {
+        "@type": "Audience",
+        audienceType: "Agences immobilières",
+        geographicArea: { "@type": "Country", name: "France" },
+      },
+      offers: {
+        "@type": "Offer",
+        category: "SaaS",
+        availability: "https://schema.org/InStock",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
