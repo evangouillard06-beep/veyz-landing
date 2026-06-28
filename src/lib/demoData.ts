@@ -55,11 +55,11 @@ export const SCORES: Record<ScoreKey, { label: string; tone: "hot" | "warm" | "c
   froid: { label: "Froid", tone: "cold" },
 };
 
-export const STATUTS: Record<StatutKey, { label: string; tone: "accent" | "amber" | "neutral" }> = {
+export const STATUTS: Record<StatutKey, { label: string; tone: "success" | "amber" | "neutral" }> = {
   nouveau: { label: "Nouveau", tone: "neutral" },
   a_valider: { label: "À valider", tone: "amber" },
-  envoye: { label: "Envoyé", tone: "neutral" },
-  repondu: { label: "Répondu", tone: "accent" },
+  envoye: { label: "Envoyé", tone: "success" },
+  repondu: { label: "Répondu", tone: "success" },
   relance: { label: "Relance", tone: "amber" },
 };
 

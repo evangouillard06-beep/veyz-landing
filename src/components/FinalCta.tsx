@@ -27,7 +27,7 @@ export default function FinalCta() {
                 <h2 className="max-w-[20ch] text-balance text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
                   Et si vous ne ratiez plus jamais un mandat ?
                 </h2>
-                <p className="mt-5 max-w-[48ch] text-lg text-zinc-300">
+                <p className="mt-5 max-w-[48ch] text-lg text-slate-300">
                   Testez Veyz 2 semaines, gratuitement. On connecte votre boîte
                   mail et on s&apos;occupe de tout — vous n&apos;avez rien à
                   faire.

@@ -78,12 +78,12 @@ export default function ProductPreview() {
     <div className="glass relative w-full overflow-hidden rounded-2xl p-4 sm:p-5">
       {/* Barre de fenêtre */}
       <div className="mb-4 flex items-center justify-between">
-        <div className="flex items-center gap-2 text-xs text-zinc-500">
+        <div className="flex items-center gap-2 text-xs text-slate-500">
           <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
           <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
           <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
         </div>
-        <div className="flex items-center gap-1.5 text-[11px] font-medium text-zinc-400">
+        <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-400">
           <Sparkle weight="fill" className="h-3.5 w-3.5 text-accent-soft" />
           Veyz · Boîte de réception
         </div>
@@ -98,10 +98,10 @@ export default function ProductPreview() {
               key={lead.id}
               animate={{
                 borderColor: isActive
-                  ? "rgba(16,185,129,0.5)"
+                  ? "rgba(99,102,241,0.5)"
                   : "rgba(255,255,255,0.07)",
                 backgroundColor: isActive
-                  ? "rgba(16,185,129,0.07)"
+                  ? "rgba(99,102,241,0.07)"
                   : "rgba(255,255,255,0.015)",
               }}
               transition={{ duration: 0.4 }}
@@ -118,24 +118,24 @@ export default function ProductPreview() {
                   <p className="truncate text-sm font-medium text-white">
                     {lead.name}
                   </p>
-                  <span className="shrink-0 rounded-md bg-white/5 px-1.5 py-0.5 text-[10px] text-zinc-400">
+                  <span className="shrink-0 rounded-md bg-white/5 px-1.5 py-0.5 text-[10px] text-slate-400">
                     {lead.source}
                   </span>
                 </div>
-                <p className="truncate text-xs text-zinc-500">{lead.subject}</p>
+                <p className="truncate text-xs text-slate-500">{lead.subject}</p>
               </div>
               {lead.hot ? (
-                <span className="relative flex shrink-0 items-center gap-1 rounded-full bg-accent/15 px-2 py-1 text-[10px] font-semibold text-accent-soft">
+                <span className="relative flex shrink-0 items-center gap-1 rounded-full bg-coral/15 px-2 py-1 text-[10px] font-semibold text-coral">
                   {isActive && !reduce && (
-                    <span className="absolute -left-1 -top-1 h-2 w-2 rounded-full bg-accent">
-                      <span className="absolute inset-0 animate-pulse-ring rounded-full bg-accent" />
+                    <span className="absolute -left-1 -top-1 h-2 w-2 rounded-full bg-coral">
+                      <span className="absolute inset-0 animate-pulse-ring rounded-full bg-coral" />
                     </span>
                   )}
                   <Fire weight="fill" className="h-3 w-3" />
                   Lead chaud
                 </span>
               ) : (
-                <span className="shrink-0 rounded-full bg-white/5 px-2 py-1 text-[10px] text-zinc-400">
+                <span className="shrink-0 rounded-full bg-white/5 px-2 py-1 text-[10px] text-slate-400">
                   {lead.category}
                 </span>
               )}
@@ -165,7 +165,7 @@ export default function ProductPreview() {
                   À valider
                 </span>
               </div>
-              <p className="text-xs leading-relaxed text-zinc-300">
+              <p className="text-xs leading-relaxed text-slate-300">
                 Bonjour {current.name.split(" ")[0]}, merci pour votre message
                 concernant{" "}
                 <span className="text-white">
@@ -175,11 +175,11 @@ export default function ProductPreview() {
                 voix.
               </p>
               <div className="mt-3 flex items-center gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-lg bg-accent px-3 py-1.5 text-[11px] font-semibold text-ink-950">
+                <span className="inline-flex items-center gap-1.5 rounded-lg bg-accent-gradient px-3 py-1.5 text-[11px] font-semibold text-ink-950">
                   <PaperPlaneTilt weight="fill" className="h-3.5 w-3.5" />
                   Valider et envoyer
                 </span>
-                <span className="inline-flex items-center gap-1.5 text-[11px] text-zinc-500">
+                <span className="inline-flex items-center gap-1.5 text-[11px] text-slate-500">
                   <CheckCircle className="h-3.5 w-3.5" />
                   Rien n&apos;est envoyé sans vous
                 </span>

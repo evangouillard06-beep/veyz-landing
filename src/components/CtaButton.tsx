@@ -29,7 +29,7 @@ export default function CtaButton({
 
   const variants = {
     primary:
-      "bg-accent text-ink-950 font-semibold shadow-[0_8px_30px_-8px_rgba(16,185,129,0.6)] hover:bg-accent-soft",
+      "bg-accent-gradient text-ink-950 font-semibold shadow-[0_8px_30px_-8px_rgba(99,102,241,0.6)] hover:brightness-110",
     ghost: "glass text-white font-medium hover:bg-white/[0.06] border-white/10",
   };
 

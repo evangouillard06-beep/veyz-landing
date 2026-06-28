@@ -40,7 +40,7 @@ export default function DemoSection() {
           <h2 className="max-w-[22ch] text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
             Voyez Veyz en action.
           </h2>
-          <p className="mt-5 max-w-[56ch] text-lg text-zinc-400">
+          <p className="mt-5 max-w-[56ch] text-lg text-slate-400">
             Le tableau de bord, en vrai. Naviguez entre les onglets, filtrez,
             cherchez, ouvrez un lead. Les leads arrivent en direct pendant que
             vous explorez.
@@ -58,7 +58,7 @@ export default function DemoSection() {
           )}
         </div>
 
-        <p className="mt-4 text-center text-xs text-zinc-600">
+        <p className="mt-4 text-center text-xs text-slate-600">
           Données de démonstration, fournies à titre illustratif.
         </p>
       </div>

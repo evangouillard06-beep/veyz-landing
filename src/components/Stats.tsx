@@ -20,7 +20,7 @@ export default function Stats() {
               <div className="text-4xl font-semibold tracking-tight text-white lg:text-5xl">
                 <Counter to={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="mt-2 text-sm text-zinc-400">{stat.label}</p>
+              <p className="mt-2 text-sm text-slate-400">{stat.label}</p>
             </div>
           </Reveal>
         ))}

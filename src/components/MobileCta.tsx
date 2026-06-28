@@ -59,7 +59,7 @@ export default function MobileCta() {
           >
             <a
               href={siteConfig.ctaHref}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-[15px] font-semibold text-ink-950 shadow-[0_10px_34px_-8px_rgba(16,185,129,0.7)] transition-transform active:scale-[0.98]"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-accent-gradient px-6 py-3.5 text-[15px] font-semibold text-ink-950 shadow-[0_10px_34px_-8px_rgba(99,102,241,0.7)] transition-transform active:scale-[0.98]"
             >
               {siteConfig.ctaLabel}
               <ArrowRight weight="bold" className="h-4 w-4" />

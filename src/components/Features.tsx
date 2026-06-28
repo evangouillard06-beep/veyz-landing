@@ -23,23 +23,23 @@ export default function Features() {
         <div className="mt-14 grid auto-rows-[minmax(0,1fr)] grid-flow-row-dense grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-6">
           {/* F1 - Alerte leads chauds (cellule haute) */}
           <Reveal className="md:col-span-1 lg:col-span-2 lg:row-span-2">
-            <article className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-accent/20 bg-gradient-to-b from-accent/[0.08] to-transparent p-7">
+            <article className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-coral/20 bg-gradient-to-b from-coral/[0.08] to-transparent p-7">
               <div>
-                <Fire weight="fill" className="h-8 w-8 text-accent-soft" />
+                <Fire weight="fill" className="h-8 w-8 text-coral" />
                 <h3 className="mt-5 text-xl font-medium text-white">
                   Repérez les vendeurs en priorité
                 </h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-zinc-400">
+                <p className="mt-3 text-[15px] leading-relaxed text-slate-400">
                   Alerte instantanée sur les demandes d&apos;estimation, vos
                   mandats potentiels. Vous rappelez les bons contacts en premier.
                 </p>
               </div>
-              <div className="mt-8 flex items-center gap-2 rounded-xl border border-accent/25 bg-ink-900/60 px-3 py-2.5">
+              <div className="mt-8 flex items-center gap-2 rounded-xl border border-coral/25 bg-ink-900/60 px-3 py-2.5">
                 <span className="relative flex h-2.5 w-2.5">
-                  <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-accent" />
-                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
+                  <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-coral" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-coral" />
                 </span>
-                <span className="text-xs font-medium text-accent-soft">
+                <span className="text-xs font-medium text-coral">
                   Nouveau lead chaud · Estimation
                 </span>
               </div>
@@ -53,7 +53,7 @@ export default function Features() {
               <h3 className="mt-5 text-xl font-medium text-white">
                 Répondez avant vos concurrents
               </h3>
-              <p className="mt-3 max-w-[60ch] text-[15px] leading-relaxed text-zinc-400">
+              <p className="mt-3 max-w-[60ch] text-[15px] leading-relaxed text-slate-400">
                 Vos réponses sont prêtes en quelques secondes. Le premier qui
                 répond décroche le mandat : ce sera vous.
               </p>
@@ -67,7 +67,7 @@ export default function Features() {
               <h3 className="mt-5 text-lg font-medium text-white">
                 Vous restez maître
               </h3>
-              <p className="mt-2.5 text-[15px] leading-relaxed text-zinc-400">
+              <p className="mt-2.5 text-[15px] leading-relaxed text-slate-400">
                 Vous validez chaque réponse. Rien ne part sans vous.
               </p>
             </article>
@@ -80,7 +80,7 @@ export default function Features() {
               <h3 className="mt-5 text-lg font-medium text-white">
                 Ne relancez plus à la main
               </h3>
-              <p className="mt-2.5 text-[15px] leading-relaxed text-zinc-400">
+              <p className="mt-2.5 text-[15px] leading-relaxed text-slate-400">
                 Les prospects sans réponse sont relancés pour vous, au bon
                 moment.
               </p>
@@ -95,7 +95,7 @@ export default function Features() {
                 <h3 className="mt-5 text-xl font-medium text-white">
                   Gardez l&apos;œil sur tout
                 </h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-zinc-400">
+                <p className="mt-3 text-[15px] leading-relaxed text-slate-400">
                   Un tableau de bord clair de tous vos contacts : reçus,
                   réponses, relances, mandats chauds du jour.
                 </p>
@@ -114,7 +114,7 @@ export default function Features() {
                       <div className="h-full w-2/3 rounded-full bg-accent/70" />
                     </div>
                     <p className="mt-2 text-xs font-medium text-white">{b.k}</p>
-                    <p className="text-[11px] text-zinc-500">{b.v}</p>
+                    <p className="text-[11px] text-slate-500">{b.v}</p>
                   </div>
                 ))}
               </div>

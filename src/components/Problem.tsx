@@ -27,7 +27,7 @@ export default function Problem() {
           <h2 className="max-w-[22ch] text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
             Vos meilleurs mandats partent pendant que vous travaillez.
           </h2>
-          <p className="mt-5 max-w-[62ch] text-lg text-zinc-400">
+          <p className="mt-5 max-w-[62ch] text-lg text-slate-400">
             Un vendeur vous écrit le dimanche soir. Vous répondez le mardi.
             Entre-temps, il a confié son bien au confrère. Entre les portails,
             les relances oubliées et la paperasse, vos contacts les plus chauds
@@ -47,7 +47,7 @@ export default function Problem() {
                 <h3 className="mt-5 text-lg font-medium text-white">
                   {pain.title}
                 </h3>
-                <p className="mt-2.5 text-[15px] leading-relaxed text-zinc-400">
+                <p className="mt-2.5 text-[15px] leading-relaxed text-slate-400">
                   {pain.body}
                 </p>
               </div>

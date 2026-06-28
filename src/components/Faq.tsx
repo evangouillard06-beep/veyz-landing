@@ -55,7 +55,7 @@ function Item({ q, a, index }: { q: string; a: string; index: number }) {
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="overflow-hidden"
             >
-              <p className="max-w-[68ch] pb-6 text-[15px] leading-relaxed text-zinc-400">
+              <p className="max-w-[68ch] pb-6 text-[15px] leading-relaxed text-slate-400">
                 {a}
               </p>
             </motion.div>

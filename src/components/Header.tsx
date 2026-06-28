@@ -36,7 +36,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-zinc-400 transition-colors hover:text-white"
+              className="text-sm text-slate-400 transition-colors hover:text-white"
             >
               {item.label}
             </a>
@@ -74,7 +74,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="border-b border-white/5 py-3 text-zinc-300 last:border-0"
+                  className="border-b border-white/5 py-3 text-slate-300 last:border-0"
                 >
                   {item.label}
                 </a>

@@ -44,15 +44,15 @@ import {
 /* ------------------------------ helpers UI ------------------------------ */
 
 const scoreToneClass: Record<"hot" | "warm" | "cold", string> = {
-  hot: "bg-accent/15 text-accent-soft",
+  hot: "bg-coral/15 text-coral",
   warm: "bg-amber-400/10 text-amber-300",
-  cold: "bg-white/5 text-zinc-400",
+  cold: "bg-white/5 text-slate-400",
 };
 
-const statutToneClass: Record<"accent" | "amber" | "neutral", string> = {
-  accent: "bg-accent/15 text-accent-soft",
+const statutToneClass: Record<"success" | "amber" | "neutral", string> = {
+  success: "bg-success/15 text-success-soft",
   amber: "bg-amber-400/10 text-amber-300",
-  neutral: "bg-white/5 text-zinc-400",
+  neutral: "bg-white/5 text-slate-400",
 };
 
 function ScoreBadge({ score }: { score: ScoreKey }) {
@@ -115,7 +115,7 @@ function BarRow({
 }) {
   return (
     <div className="flex items-center gap-3">
-      <span className="w-32 shrink-0 truncate text-xs text-zinc-400">{label}</span>
+      <span className="w-32 shrink-0 truncate text-xs text-slate-400">{label}</span>
       <div className="relative h-2 flex-1 overflow-hidden rounded-full bg-white/5">
         <motion.div
           className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-accent/60 to-accent-soft"
@@ -125,7 +125,7 @@ function BarRow({
           transition={{ duration: reduce ? 0 : 0.6, ease: [0.16, 1, 0.3, 1] }}
         />
       </div>
-      <span className="w-7 shrink-0 text-right font-mono text-xs text-zinc-300">
+      <span className="w-7 shrink-0 text-right font-mono text-xs text-slate-300">
         {value}
       </span>
     </div>
@@ -138,13 +138,13 @@ type KpiDef = {
   key: string;
   label: string;
   icon: typeof Tray;
-  accent?: boolean;
+  tone?: "accent" | "hot";
   suffix?: string;
 };
 
 const KPI_DEFS: KpiDef[] = [
   { key: "total", label: "Total leads", icon: Tray },
-  { key: "hot", label: "Leads chauds", icon: Fire, accent: true },
+  { key: "hot", label: "Leads chauds", icon: Fire, tone: "hot" },
   { key: "aValider", label: "À valider", icon: PencilSimpleLine },
   { key: "repondu", label: "Répondu", icon: CheckCircle },
   { key: "taux", label: "Taux de réponse", icon: ChartLineUp, suffix: " %" },
@@ -375,7 +375,7 @@ export default function DemoDashboard() {
             <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
             <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
           </div>
-          <span className="hidden items-center gap-1.5 text-xs font-medium text-zinc-400 sm:flex">
+          <span className="hidden items-center gap-1.5 text-xs font-medium text-slate-400 sm:flex">
             <Sparkle weight="fill" className="h-3.5 w-3.5 text-accent-soft" />
             Veyz · Tableau de bord
           </span>
@@ -396,7 +396,7 @@ export default function DemoDashboard() {
               onClick={() => setTab(t.key)}
               aria-current={active}
               className={`relative flex shrink-0 items-center gap-1.5 rounded-t-lg px-3 py-2.5 text-sm transition-colors ${
-                active ? "text-white" : "text-zinc-500 hover:text-zinc-300"
+                active ? "text-white" : "text-slate-500 hover:text-slate-300"
               }`}
             >
               <t.icon weight={active ? "fill" : "regular"} className="h-4 w-4" />
@@ -420,11 +420,11 @@ export default function DemoDashboard() {
             <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
               {KPI_DEFS.map((k) => (
                 <div key={k.key} className="rounded-xl border border-white/10 bg-ink-950/50 p-3">
-                  <div className="flex items-center gap-1.5 text-[11px] text-zinc-500">
-                    <k.icon weight="duotone" className={`h-3.5 w-3.5 ${k.accent ? "text-accent-soft" : "text-zinc-400"}`} />
+                  <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
+                    <k.icon weight="duotone" className={`h-3.5 w-3.5 ${k.tone === "hot" ? "text-coral" : k.tone === "accent" ? "text-accent-soft" : "text-slate-400"}`} />
                     {k.label}
                   </div>
-                  <div className={`mt-1 font-mono text-2xl font-semibold tabular-nums ${k.accent ? "text-accent-soft" : "text-white"}`}>
+                  <div className={`mt-1 font-mono text-2xl font-semibold tabular-nums ${k.tone === "hot" ? "text-coral" : k.tone === "accent" ? "text-accent-soft" : "text-white"}`}>
                     <AnimatedNumber value={kpis[k.key === "taux" ? "taux" : k.key]} />
                     {k.suffix}
                   </div>
@@ -435,7 +435,7 @@ export default function DemoDashboard() {
             {/* Graphiques */}
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
               <div className="rounded-xl border border-white/10 bg-ink-950/40 p-4">
-                <p className="mb-3 text-xs font-medium text-zinc-400">Répartition par catégorie</p>
+                <p className="mb-3 text-xs font-medium text-slate-400">Répartition par catégorie</p>
                 <div className="space-y-2.5">
                   {byCategorie.map((d) => (
                     <BarRow key={d.label} label={d.label} value={d.value} max={Math.max(...byCategorie.map((x) => x.value), 1)} reduce={!!reduce} />
@@ -444,7 +444,7 @@ export default function DemoDashboard() {
               </div>
 
               <div className="rounded-xl border border-white/10 bg-ink-950/40 p-4">
-                <p className="mb-3 text-xs font-medium text-zinc-400">Répartition par statut</p>
+                <p className="mb-3 text-xs font-medium text-slate-400">Répartition par statut</p>
                 <div className="space-y-2.5">
                   {byStatut.map((d) => (
                     <BarRow key={d.label} label={d.label} value={d.value} max={Math.max(...byStatut.map((x) => x.value), 1)} reduce={!!reduce} />
@@ -453,7 +453,7 @@ export default function DemoDashboard() {
               </div>
 
               <div className="rounded-xl border border-white/10 bg-ink-950/40 p-4">
-                <p className="mb-3 text-xs font-medium text-zinc-400">Volume reçu (7 jours)</p>
+                <p className="mb-3 text-xs font-medium text-slate-400">Volume reçu (7 jours)</p>
                 <div className="flex h-24 items-end gap-2">
                   {volumeByDay.map((d, i) => {
                     const max = Math.max(...volumeByDay.map((x) => x.value), 1);
@@ -461,14 +461,14 @@ export default function DemoDashboard() {
                       <div key={i} className="flex flex-1 flex-col items-center gap-1.5">
                         <div className="relative flex h-20 w-full items-end">
                           <motion.div
-                            className="w-full rounded-t-md bg-gradient-to-t from-accent/40 to-accent-soft/80"
+                            className="w-full rounded-t-md bg-gradient-to-t from-accent/50 to-accent2/90"
                             style={{ height: "100%", transformOrigin: "bottom" }}
                             initial={reduce ? false : { scaleY: 0 }}
                             animate={{ scaleY: Math.max(d.value / max, 0.04) }}
                             transition={{ duration: reduce ? 0 : 0.6, delay: reduce ? 0 : i * 0.04, ease: [0.16, 1, 0.3, 1] }}
                           />
                         </div>
-                        <span className="text-[10px] text-zinc-600">{d.label}</span>
+                        <span className="text-[10px] text-slate-600">{d.label}</span>
                       </div>
                     );
                   })}
@@ -476,7 +476,7 @@ export default function DemoDashboard() {
               </div>
 
               <div className="rounded-xl border border-white/10 bg-ink-950/40 p-4">
-                <p className="mb-3 text-xs font-medium text-zinc-400">Entonnoir de traitement</p>
+                <p className="mb-3 text-xs font-medium text-slate-400">Entonnoir de traitement</p>
                 <div className="space-y-2.5">
                   {funnel.map((d) => (
                     <BarRow key={d.label} label={d.label} value={d.value} max={funnel[0].value || 1} reduce={!!reduce} />
@@ -512,7 +512,7 @@ export default function DemoDashboard() {
                         </div>
                         <div className="min-w-0 flex-1">
                           <p className="truncate text-[13px] font-medium text-white">{l.expediteur}</p>
-                          <p className="truncate text-[11px] text-zinc-500">{l.sujet}</p>
+                          <p className="truncate text-[11px] text-slate-500">{l.sujet}</p>
                         </div>
                         <ScoreBadge score={l.score} />
                       </button>
@@ -529,14 +529,14 @@ export default function DemoDashboard() {
             {/* Barre de filtres */}
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <div className="relative w-full sm:w-auto sm:min-w-[200px] sm:flex-1">
-                <MagnifyingGlass className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
+                <MagnifyingGlass className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
                 <input
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Rechercher un lead..."
                   aria-label="Rechercher un lead"
-                  className="w-full rounded-lg border border-white/10 bg-ink-950/80 py-2.5 pl-9 pr-3 text-sm text-white placeholder:text-zinc-600 outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/30"
+                  className="w-full rounded-lg border border-white/10 bg-ink-950/80 py-2.5 pl-9 pr-3 text-sm text-white placeholder:text-slate-600 outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/30"
                 />
               </div>
               <Select className="flex-1 sm:flex-none" label="Statut" value={fStatut} onChange={(v) => setFStatut(v as StatutKey | "all")} options={[["all", "Tous statuts"], ...(Object.keys(STATUTS) as StatutKey[]).map((k) => [k, STATUTS[k].label] as [string, string])]} />
@@ -548,7 +548,7 @@ export default function DemoDashboard() {
             <div className="max-h-[440px] overflow-auto rounded-xl border border-white/10">
               <table className="w-full min-w-[820px] border-collapse text-left text-sm">
                 <thead className="sticky top-0 z-10 bg-ink-900/95 backdrop-blur">
-                  <tr className="text-[11px] uppercase tracking-wide text-zinc-500">
+                  <tr className="text-[11px] uppercase tracking-wide text-slate-500">
                     <Th label="Date" k="date" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} />
                     <Th label="Expéditeur" k="expediteur" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} />
                     <Th label="Sujet" k="sujet" sortKey={sortKey} sortDir={sortDir} onSort={toggleSort} />
@@ -568,19 +568,19 @@ export default function DemoDashboard() {
                         highlightId === l.id ? "bg-accent/[0.08]" : ""
                       }`}
                     >
-                      <td className="whitespace-nowrap px-3 py-2.5 font-mono text-xs text-zinc-400">{formatDate(l.ts)}</td>
+                      <td className="whitespace-nowrap px-3 py-2.5 font-mono text-xs text-slate-400">{formatDate(l.ts)}</td>
                       <td className="whitespace-nowrap px-3 py-2.5 font-medium text-white">{l.expediteur}</td>
-                      <td className="max-w-[220px] truncate px-3 py-2.5 text-zinc-300">{l.sujet}</td>
-                      <td className="whitespace-nowrap px-3 py-2.5 text-zinc-400">{CATEGORIES[l.categorie]}</td>
+                      <td className="max-w-[220px] truncate px-3 py-2.5 text-slate-300">{l.sujet}</td>
+                      <td className="whitespace-nowrap px-3 py-2.5 text-slate-400">{CATEGORIES[l.categorie]}</td>
                       <td className="px-3 py-2.5"><ScoreBadge score={l.score} /></td>
                       <td className="px-3 py-2.5"><StatutBadge statut={l.statut} /></td>
-                      <td className="whitespace-nowrap px-3 py-2.5 font-mono text-xs text-zinc-400">{l.telephone}</td>
-                      <td className="whitespace-nowrap px-3 py-2.5 text-zinc-400">{l.bien}</td>
+                      <td className="whitespace-nowrap px-3 py-2.5 font-mono text-xs text-slate-400">{l.telephone}</td>
+                      <td className="whitespace-nowrap px-3 py-2.5 text-slate-400">{l.bien}</td>
                     </tr>
                   ))}
                   {filteredLeads.length === 0 && (
                     <tr>
-                      <td colSpan={8} className="px-3 py-10 text-center text-sm text-zinc-500">
+                      <td colSpan={8} className="px-3 py-10 text-center text-sm text-slate-500">
                         Aucun lead ne correspond à ces filtres.
                       </td>
                     </tr>
@@ -588,7 +588,7 @@ export default function DemoDashboard() {
                 </tbody>
               </table>
             </div>
-            <p className="mt-3 text-xs text-zinc-600">
+            <p className="mt-3 text-xs text-slate-600">
               {filteredLeads.length} lead{filteredLeads.length > 1 ? "s" : ""} · cliquez une ligne pour voir le détail
             </p>
           </div>
@@ -598,7 +598,7 @@ export default function DemoDashboard() {
           <div className="max-h-[480px] overflow-auto rounded-xl border border-white/10">
             <table className="w-full min-w-[640px] border-collapse text-left text-sm">
               <thead className="sticky top-0 z-10 bg-ink-900/95 backdrop-blur">
-                <tr className="text-[11px] uppercase tracking-wide text-zinc-500">
+                <tr className="text-[11px] uppercase tracking-wide text-slate-500">
                   <th className="px-3 py-2.5 font-medium">Référence</th>
                   <th className="px-3 py-2.5 font-medium">Type</th>
                   <th className="px-3 py-2.5 font-medium">Ville</th>
@@ -611,17 +611,17 @@ export default function DemoDashboard() {
                 {BIENS.map((b) => {
                   const tone =
                     b.statut === "Disponible"
-                      ? "bg-accent/15 text-accent-soft"
+                      ? "bg-success/15 text-success-soft"
                       : b.statut === "Sous compromis"
                         ? "bg-amber-400/10 text-amber-300"
-                        : "bg-white/5 text-zinc-400";
+                        : "bg-white/5 text-slate-400";
                   return (
                     <tr key={b.ref} className="border-t border-white/[0.06] transition-colors hover:bg-white/[0.03]">
-                      <td className="whitespace-nowrap px-3 py-2.5 font-mono text-xs text-zinc-300">{b.ref}</td>
+                      <td className="whitespace-nowrap px-3 py-2.5 font-mono text-xs text-slate-300">{b.ref}</td>
                       <td className="whitespace-nowrap px-3 py-2.5 text-white">{b.type}</td>
-                      <td className="whitespace-nowrap px-3 py-2.5 text-zinc-400">{b.ville}</td>
-                      <td className="whitespace-nowrap px-3 py-2.5 text-zinc-400">{b.surface} m²</td>
-                      <td className="whitespace-nowrap px-3 py-2.5 font-mono text-zinc-300">
+                      <td className="whitespace-nowrap px-3 py-2.5 text-slate-400">{b.ville}</td>
+                      <td className="whitespace-nowrap px-3 py-2.5 text-slate-400">{b.surface} m²</td>
+                      <td className="whitespace-nowrap px-3 py-2.5 font-mono text-slate-300">
                         {b.prix.toLocaleString("fr-FR")} €
                       </td>
                       <td className="px-3 py-2.5">
@@ -646,13 +646,13 @@ export default function DemoDashboard() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ type: "spring", stiffness: 320, damping: 22 }}
-            className="pointer-events-none absolute right-4 top-16 z-30 flex items-center gap-2 rounded-xl border border-accent/30 bg-ink-900/95 px-3.5 py-2.5 shadow-[0_12px_40px_-12px_rgba(16,185,129,0.6)] backdrop-blur-sm"
+            className="pointer-events-none absolute right-4 top-16 z-30 flex items-center gap-2 rounded-xl border border-coral/40 bg-ink-900/95 px-3.5 py-2.5 shadow-[0_12px_40px_-12px_rgba(251,113,133,0.5)] backdrop-blur-sm"
           >
             <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-accent" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
+              <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-coral" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-coral" />
             </span>
-            <Fire weight="fill" className="h-4 w-4 text-accent-soft" />
+            <Fire weight="fill" className="h-4 w-4 text-coral" />
             <span className="text-[13px] font-semibold text-white">
               Lead chaud · {toast.expediteur}
             </span>
@@ -692,7 +692,7 @@ export default function DemoDashboard() {
                   type="button"
                   onClick={() => setSelected(null)}
                   aria-label="Fermer le détail"
-                  className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-zinc-400 transition-colors hover:text-white active:scale-95"
+                  className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-slate-400 transition-colors hover:text-white active:scale-95"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -705,12 +705,12 @@ export default function DemoDashboard() {
                   </div>
                   <div className="min-w-0">
                     <p className="truncate font-medium text-white">{selected.expediteur}</p>
-                    <p className="truncate text-xs text-zinc-500">{selected.email}</p>
+                    <p className="truncate text-xs text-slate-500">{selected.email}</p>
                   </div>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-white/5 px-2 py-0.5 text-[11px] text-zinc-300">{CATEGORIES[selected.categorie]}</span>
+                  <span className="rounded-full bg-white/5 px-2 py-0.5 text-[11px] text-slate-300">{CATEGORIES[selected.categorie]}</span>
                   <ScoreBadge score={selected.score} />
                   <StatutBadge statut={selected.statut} />
                 </div>
@@ -723,8 +723,8 @@ export default function DemoDashboard() {
                 </dl>
 
                 <div>
-                  <p className="mb-1.5 text-xs font-medium text-zinc-400">Résumé</p>
-                  <p className="rounded-lg border border-white/10 bg-ink-950/50 p-3 text-sm leading-relaxed text-zinc-300">
+                  <p className="mb-1.5 text-xs font-medium text-slate-400">Résumé</p>
+                  <p className="rounded-lg border border-white/10 bg-ink-950/50 p-3 text-sm leading-relaxed text-slate-300">
                     {selected.resume}
                   </p>
                 </div>
@@ -739,17 +739,17 @@ export default function DemoDashboard() {
                       À valider
                     </span>
                   </div>
-                  <p className="rounded-lg border border-accent/20 bg-accent/[0.05] p-3 text-sm leading-relaxed text-zinc-200">
+                  <p className="rounded-lg border border-accent/20 bg-accent/[0.05] p-3 text-sm leading-relaxed text-slate-200">
                     {selected.reponse}
                   </p>
                 </div>
               </div>
 
               <div className="border-t border-white/10 p-4">
-                <span className="block w-full rounded-full bg-accent px-5 py-3 text-center text-sm font-semibold text-ink-950">
+                <span className="block w-full rounded-full bg-accent-gradient px-5 py-3 text-center text-sm font-semibold text-ink-950">
                   Valider et envoyer
                 </span>
-                <p className="mt-2 text-center text-[11px] text-zinc-600">
+                <p className="mt-2 text-center text-[11px] text-slate-600">
                   Aperçu de démonstration, non fonctionnel.
                 </p>
               </div>
@@ -782,7 +782,7 @@ function Th({
       <button
         type="button"
         onClick={() => onSort(k)}
-        className={`flex items-center gap-1 transition-colors hover:text-zinc-300 ${active ? "text-accent-soft" : ""}`}
+        className={`flex items-center gap-1 transition-colors hover:text-slate-300 ${active ? "text-accent-soft" : ""}`}
       >
         {label}
         {active &&
@@ -814,7 +814,7 @@ function Select({
       aria-label={label}
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className={`rounded-lg border border-white/10 bg-ink-950/80 px-3 py-2.5 text-sm text-zinc-300 outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/30 ${className}`}
+      className={`rounded-lg border border-white/10 bg-ink-950/80 px-3 py-2.5 text-sm text-slate-300 outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/30 ${className}`}
     >
       {options.map(([v, l]) => (
         <option key={v} value={v} className="bg-ink-900 text-white">
@@ -828,8 +828,8 @@ function Select({
 function Info({ label, value, span }: { label: string; value: string; span?: boolean }) {
   return (
     <div className={span ? "col-span-2 sm:col-span-3" : ""}>
-      <dt className="text-[11px] text-zinc-500">{label}</dt>
-      <dd className="mt-0.5 text-zinc-200">{value}</dd>
+      <dt className="text-[11px] text-slate-500">{label}</dt>
+      <dd className="mt-0.5 text-slate-200">{value}</dd>
     </div>
   );
 }

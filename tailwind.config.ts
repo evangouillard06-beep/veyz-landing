@@ -5,18 +5,45 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Fonds sombres (échelle "ink" conservée pour compat, remappée sur la palette officielle)
         ink: {
-          950: "#08090a",
-          900: "#0c0e10",
-          850: "#101316",
-          800: "#15191d",
-          700: "#1d2227",
+          950: "#0A0E1A", // fond principal
+          900: "#0E1730", // fond secondaire
+          850: "#101A33",
+          800: "#131C36", // surface / carte
+          700: "#1E293B", // bordure visible
         },
+        // Alias sémantiques de fond
+        bg: {
+          DEFAULT: "#0A0E1A",
+          soft: "#0E1730",
+        },
+        surface: "#131C36",
+        // Accent de marque : indigo + cyan (dégradé signature #6366F1 → #22D3EE)
         accent: {
-          DEFAULT: "#10b981",
-          soft: "#34d399",
-          deep: "#059669",
+          DEFAULT: "#6366F1", // indigo
+          soft: "#A5B4FC", // indigo clair (texte/icônes sur fond sombre, contraste AA)
+          deep: "#4F46E5",
         },
+        accent2: {
+          DEFAULT: "#22D3EE", // cyan
+          soft: "#67E8F9",
+        },
+        // Texte
+        text: {
+          DEFAULT: "#F8FAFC",
+          muted: "#94A3B8",
+          faint: "#64748B",
+        },
+        line: "#1E293B", // bordure visible
+        // Sémantique (à doser, jamais comme couleur de marque)
+        success: {
+          DEFAULT: "#10B981", // succès / disponible / envoyé
+          soft: "#6EE7B7",
+        },
+        warn: "#F59E0B", // alerte / à valider (ambre)
+        coral: "#FB7185", // lead chaud (corail)
+        danger: "#EF4444", // erreur
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],

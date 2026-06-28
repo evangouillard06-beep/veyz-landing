@@ -45,12 +45,12 @@ export default function Hero() {
             className="mt-6 text-balance text-[clamp(2.1rem,8vw,3.75rem)] font-semibold leading-[1.05] tracking-tight text-white"
           >
             Répondez à vos leads immobiliers{" "}
-            <span className="text-gradient">avant vos concurrents.</span>
+            <span className="text-gradient-accent">avant vos concurrents.</span>
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-[48ch] text-lg leading-relaxed text-zinc-400"
+            className="mt-6 max-w-[48ch] text-lg leading-relaxed text-slate-400"
           >
             Le premier qui répond décroche le mandat. Veyz lit vos emails (SeLoger,
             Leboncoin, contacts directs), repère les vendeurs et acheteurs sérieux
@@ -62,7 +62,7 @@ export default function Hero() {
             className="mt-9 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center"
           >
             <CtaButton size="lg" className="w-full sm:w-auto" />
-            <span className="inline-flex items-center justify-center gap-2 text-sm text-zinc-500 sm:justify-start">
+            <span className="inline-flex items-center justify-center gap-2 text-sm text-slate-500 sm:justify-start">
               <ShieldCheck weight="fill" className="h-4 w-4 shrink-0 text-accent-soft" />
               Rien n&apos;est envoyé sans votre validation.
             </span>

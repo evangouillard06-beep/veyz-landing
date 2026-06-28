@@ -24,7 +24,7 @@ const EMPTY: Fields = {
 };
 
 const fieldClass =
-  "w-full rounded-xl border border-white/10 bg-ink-950/80 px-4 py-3 text-[15px] text-white placeholder:text-zinc-600 outline-none transition-colors focus:border-accent/60 focus:ring-2 focus:ring-accent/30";
+  "w-full rounded-xl border border-white/10 bg-ink-950/80 px-4 py-3 text-[15px] text-white placeholder:text-slate-600 outline-none transition-colors focus:border-accent/60 focus:ring-2 focus:ring-accent/30";
 
 export default function CallbackForm() {
   const reduce = useReducedMotion();
@@ -103,14 +103,14 @@ export default function CallbackForm() {
           initial={reduce ? false : { scale: 0.6, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ type: "spring", stiffness: 260, damping: 18 }}
-          className="grid h-14 w-14 place-items-center rounded-full bg-accent/15"
+          className="grid h-14 w-14 place-items-center rounded-full bg-success/15"
         >
-          <CheckCircle weight="fill" className="h-8 w-8 text-accent-soft" />
+          <CheckCircle weight="fill" className="h-8 w-8 text-success-soft" />
         </motion.span>
         <p className="mt-5 text-lg font-medium text-white">
           Merci, on vous rappelle très vite.
         </p>
-        <p className="mt-2 max-w-[34ch] text-sm text-zinc-400">
+        <p className="mt-2 max-w-[34ch] text-sm text-slate-400">
           Votre demande est bien arrivée. On revient vers vous très rapidement.
         </p>
       </div>
@@ -175,8 +175,8 @@ export default function CallbackForm() {
       </div>
 
       <div className="mt-4 flex flex-col gap-2">
-        <label htmlFor="message" className="text-sm font-medium text-zinc-300">
-          Message <span className="text-zinc-600">(optionnel)</span>
+        <label htmlFor="message" className="text-sm font-medium text-slate-300">
+          Message <span className="text-slate-600">(optionnel)</span>
         </label>
         <textarea
           id="message"
@@ -204,7 +204,7 @@ export default function CallbackForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-[15px] font-semibold text-ink-950 transition-colors hover:bg-accent-soft disabled:opacity-70"
+        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-gradient px-6 py-3.5 text-[15px] font-semibold text-ink-950 transition-[filter] hover:brightness-110 disabled:opacity-70"
       >
         {status === "loading" ? (
           <>
@@ -216,7 +216,7 @@ export default function CallbackForm() {
         )}
       </button>
 
-      <p className="mt-3 text-center text-xs text-zinc-500">
+      <p className="mt-3 text-center text-xs text-slate-500">
         {siteConfig.trial.short} Vos données restent confidentielles.
       </p>
     </form>
@@ -248,10 +248,10 @@ function Field({
 }: FieldProps) {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={id} className="text-sm font-medium text-zinc-300">
+      <label htmlFor={id} className="text-sm font-medium text-slate-300">
         {label}{" "}
         {required && <span className="text-accent-soft">*</span>}
-        {optional && <span className="text-zinc-600">(optionnel)</span>}
+        {optional && <span className="text-slate-600">(optionnel)</span>}
       </label>
       <input
         id={id}

@@ -15,9 +15,9 @@ export default function OgImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#08090a",
+          backgroundColor: "#0A0E1A",
           backgroundImage:
-            "radial-gradient(900px 500px at 75% 15%, rgba(16,185,129,0.22), transparent 60%)",
+            "radial-gradient(900px 500px at 75% 15%, rgba(99,102,241,0.22), transparent 60%)",
           padding: "72px",
         }}
       >
@@ -27,18 +27,18 @@ export default function OgImage() {
               width: 56,
               height: 56,
               borderRadius: 14,
-              border: "1px solid rgba(16,185,129,0.5)",
+              border: "1px solid rgba(99,102,241,0.5)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#34d399",
+              color: "#22D3EE",
               fontSize: 38,
               fontWeight: 700,
             }}
           >
             V
           </div>
-          <div style={{ color: "#e7e9ea", fontSize: 34, fontWeight: 600 }}>
+          <div style={{ color: "#F8FAFC", fontSize: 34, fontWeight: 600 }}>
             Veyz
           </div>
         </div>
@@ -46,7 +46,7 @@ export default function OgImage() {
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <div
             style={{
-              color: "#9fb3ad",
+              color: "#94A3B8",
               fontSize: 26,
               letterSpacing: 2,
               textTransform: "uppercase",
@@ -67,7 +67,7 @@ export default function OgImage() {
           </div>
         </div>
 
-        <div style={{ color: "#7c8a86", fontSize: 24 }}>
+        <div style={{ color: "#64748B", fontSize: 24 }}>
           Veyz prépare vos réponses. Vous validez, vous envoyez.
         </div>
       </div>

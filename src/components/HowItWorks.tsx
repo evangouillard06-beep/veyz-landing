@@ -43,7 +43,7 @@ export default function HowItWorks() {
             {STEPS.map((step, i) => (
               <Reveal key={step.title} delay={i * 0.12}>
                 <li className="relative">
-                  <div className="relative z-10 grid h-14 w-14 place-items-center rounded-2xl border border-accent/30 bg-ink-900 shadow-[0_0_30px_-10px_rgba(16,185,129,0.5)]">
+                  <div className="relative z-10 grid h-14 w-14 place-items-center rounded-2xl border border-accent/30 bg-ink-900 shadow-[0_0_30px_-10px_rgba(99,102,241,0.5)]">
                     <step.icon
                       weight="fill"
                       className="h-6 w-6 text-accent-soft"
@@ -53,7 +53,7 @@ export default function HowItWorks() {
                   <h3 className="mt-6 text-xl font-medium text-white">
                     {step.title}
                   </h3>
-                  <p className="mt-2.5 max-w-[40ch] text-[15px] leading-relaxed text-zinc-400">
+                  <p className="mt-2.5 max-w-[40ch] text-[15px] leading-relaxed text-slate-400">
                     {step.body}
                   </p>
                 </li>
